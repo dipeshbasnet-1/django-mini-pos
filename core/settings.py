@@ -77,16 +77,21 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+from decouple import config
+
+SECRET_KEY = config('SECRET_KEY')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mini_pos_db',
-        'USER': 'root',
-        'PASSWORD': 'DipeshBasnet01@#$',   
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
     }
 }
+
 
 
 # Password validation
@@ -128,5 +133,5 @@ STATICFILES_DIRS=[
     BASE_DIR / 'static'
 ]
 
-MEDIA_URL="/media"
+MEDIA_URL="/media/"
 MEDIA_ROOT= BASE_DIR / 'media'
