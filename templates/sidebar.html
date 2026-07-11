@@ -1,0 +1,75 @@
+{% load initials %}
+<aside class="w-72 bg-slate-900 text-white min-h-screen flex flex-col">
+<!-- Logo -->
+    <div class="p-6 border-b border-slate-700">
+        <h1 class="text-3xl font-bold text-center text-blue-400">
+            <i class="fa-solid fa-store mr-2"></i>
+            POS System
+        </h1>
+        <p class="text-center text-slate-400 text-sm mt-2">
+            Inventory Management
+        </p>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="flex-1 p-4 space-y-2">
+        <a href="#"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition duration-300">
+            <i class="fa-solid fa-gauge text-lg"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="#"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition duration-300">
+            <i class="fa-solid fa-box text-lg"></i>
+            <span>Products</span>
+        </a>
+        <a href="#"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition duration-300">
+            <i class="fa-solid fa-layer-group text-lg"></i>
+            <span>Categories</span>
+        </a>
+        <a href="#"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition duration-300">
+            <i class="fa-solid fa-cart-shopping text-lg"></i>
+            <span>Sales</span>
+        </a>
+        <a href="#"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition duration-300">
+            <i class="fa-solid fa-users text-lg"></i>
+            <span>Customers</span>
+        </a>
+        <a href="#"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition duration-300">
+            <i class="fa-solid fa-chart-column text-lg"></i>
+            <span>Reports</span>
+        </a>
+        <a href="#"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition duration-300">
+            <i class="fa-solid fa-gear text-lg"></i>
+            <span>Settings</span>
+        </a>
+    </nav>
+    
+    <!-- User Section -->
+    
+    <div class="border-t border-slate-700 p-5">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+                {{ request.user.username|initials }}
+            </div>
+            <div>
+                <p class="font-semibold">
+                    {{ request.user.username|default:"Admin" }}
+                </p>
+                <p class="text-sm text-slate-400">
+                    Administrator
+                </p>
+            </div>
+        </div>
+        <a href="{% url 'logout' %}"
+            class="mt-4 flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 py-2 rounded-lg transition duration-300">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+    </div>
+</aside>

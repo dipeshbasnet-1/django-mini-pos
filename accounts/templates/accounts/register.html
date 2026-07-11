@@ -1,11 +1,10 @@
-{% extends "base.html" %}
+{% extends "auth_base.html" %}
 
 {% block title %}Register{% endblock %}
 
 {% block content %}
 <div class="flex justify-center items-center min-h-[85vh]">
     <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8">
-
         <div class="text-center mb-8">
             <div class="flex justify-center mb-4">
                 <i class="fa-solid fa-user-plus text-5xl text-blue-600 mb-4"></i>
@@ -15,10 +14,8 @@
                 Join us and start managing your business.
             </p>
         </div>
-
         <form method="POST" class="space-y-5">
             {% csrf_token %}
-
             <div>
                 <label class="block mb-2 font-medium text-slate-700">
                     Username
@@ -26,7 +23,7 @@
                 {{ form.username }}
                 {{ form.username.errors }}
             </div>
-
+            
             <div>
                 <label class="block mb-2 font-medium text-slate-700">
                     Email
@@ -34,7 +31,7 @@
                 {{ form.email }}
                 {{ form.email.errors }}
             </div>
-
+            
             <div>
                 <label class="block mb-2 font-medium text-slate-700">
                     Password
@@ -42,7 +39,7 @@
                 {{ form.password1 }}
                 {{ form.password1.errors }}
             </div>
-
+            
             <div>
                 <label class="block mb-2 font-medium text-slate-700">
                     Confirm Password
@@ -50,7 +47,7 @@
                 {{ form.password2 }}
                 {{ form.password2.errors }}
             </div>
-
+            
             <button
                 type="submit"
                 class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:scale-105 transition duration-300 shadow-lg"
@@ -58,7 +55,7 @@
                 Create Account
             </button>
         </form>
-
+        
         <p class="text-center mt-6 text-slate-600">
             Already have an account?
             <a href="{% url 'login' %}" class="text-blue-600 font-semibold hover:underline">
