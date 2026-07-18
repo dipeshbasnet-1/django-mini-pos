@@ -13,7 +13,7 @@
     
     <!-- Navigation -->
     <nav class="flex-1 p-4 space-y-2">
-        <a href="#"
+        <a href="{% url 'dashboard' %}"
             class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition duration-300">
             <i class="fa-solid fa-gauge text-lg"></i>
             <span>Dashboard</span>
@@ -23,7 +23,7 @@
             <i class="fa-solid fa-box text-lg"></i>
             <span>Products</span>
         </a>
-        <a href="#"
+        <a href="{% url 'category'%}"
             class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-800 transition duration-300">
             <i class="fa-solid fa-layer-group text-lg"></i>
             <span>Categories</span>
